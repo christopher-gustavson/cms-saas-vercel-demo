@@ -90,8 +90,8 @@ const TestBlock: CmsComponent<Partial<GraphQL.TestBlockDataFragment>> = ({
   );
 };
 
-TextBlock.displayName = "Test Block";
-TextBlock.getDataFragment = () => ["TestBlockData", TestBlockData];
+TestBlock.displayName = "Test Block";
+TestBlock.getDataFragment = () => ["TestBlockData", TestBlockData];
 export default TestBlock;
 
 const TestBlockData = gql(`

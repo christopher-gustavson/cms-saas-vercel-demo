@@ -8,8 +8,9 @@ import { CmsEditable } from "@remkoj/optimizely-cms-react/rsc";
  * Blank Section
  * A section without a predefined layout.
  */
-export const BlankSectionSection : CmsComponent<BlankSectionDataFragment, SectionLayoutProps> = ({ contentLink, layoutProps, data: {bgImage:bg}, children, ctx }) => {
-    return <CmsEditable as={DefaultGrid} data={{}} style='url(${bg})' layoutProps={ layoutProps } cmsId={ contentLink.key } ctx={ ctx }>{ children }</CmsEditable>
+export const BlankSectionSection : CmsComponent<BlankSectionDataFragment, SectionLayoutProps> = ({ contentLink, layoutProps, bgImage, children, ctx }) => {
+    const styles = "background-image:url("+{bgImage}+")";
+    return <CmsEditable as={DefaultGrid} data={{}} style={styles} layoutProps={ layoutProps } cmsId={ contentLink.key } ctx={ ctx }>{ children }</CmsEditable>
 }
 BlankSectionSection.displayName = "Blank Section (Section/BlankSection)"
 BlankSectionSection.getDataFragment = () => ['BlankSectionData', BlankSectionDataFragmentDoc]

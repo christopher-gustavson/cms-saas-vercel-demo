@@ -1,26 +1,32 @@
 {
   "name": "@remkoj/optimizely-frontend",
-  "packageManager": "yarn@4.12.0",
+  "packageManager": "yarn@4.6.0",
   "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "license": "Apache-2.0",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "devDependencies": {
+    "@graphql-codegen/cli": "6.2.1",
     "@graphql-typed-document-node/core": "^3.2.0",
-    "@remkoj/optimizely-graph-client": "^5.1.7",
-    "@remkoj/optimizely-graph-functions": "^5.1.7",
+    "@remkoj/optimizely-graph-client": "^5.0.1",
+    "@remkoj/optimizely-graph-functions": "^5.0.1",
     "@types/source-map-support": "^0.5.10",
-    "@yarnpkg/sdks": "^3.2.3",
+    "@yarnpkg/sdks": "^3.2.1",
     "eslint": "8.57.1",
     "graphql": "^16.12.0",
     "graphql-request": "^6.1.0",
     "graphql-tag": "^2.12.6",
-    "prettier": "^3.7.4",
+    "prettier": "^3.5.3",
     "source-map-support": "^0.5.21",
-    "typescript": "^5.9.3",
-    "vercel": "^44.7.3"
+    "typescript": "^5.8.3",
+    "vercel": "^41.6.1",
+    "@graphql-codegen/introspection": "5.0.1",
+    "@graphql-codegen/client-preset": "5.2.4"
   },
   "exports": null,
   "scripts": {
@@ -40,10 +46,11 @@
     "update-sdks": "yarn sdks vscode",
     "update-deps": "yarn upgrade-interactive && yarn dedupe && yarn sdks vscode",
     "update-yarn": "yarn set version stable && yarn install && yarn sdks vscode",
-    "env:pull": "yarn vercel env pull apps/frontend/.env.development.local"
+    "env:pull": "yarn vercel env pull apps/frontend/.env.development.local",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "resolutions": {
-    "whatwg-url": "^14",
-    "@graphql-codegen/visitor-plugin-common": "file:./packages/graphql-codegen-visitor-plugin-common-v5.8.0-patched.tgz"
+    "@graphql-codegen/visitor-plugin-common": "file:./packages/graphql-codegen-visitor-plugin-common-v5.8.0-patched.tgz",
+    "rollup": "4.20.0"
   }
 }

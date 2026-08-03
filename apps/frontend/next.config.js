@@ -1,7 +1,7 @@
-/** 
+/**
  * Next.JS Configuration
- * 
- * @type {import('next').NextConfig} 
+ *
+ * @type {import('next').NextConfig}
  */
 const nextConfig = {
     compiler: {
@@ -32,7 +32,7 @@ const nextConfig = {
         serverActions: {
           allowedOrigins: [
             '*.webproofing.cmp.optimizely.com', // Optimizely CMP Preview
-            'www.optimizelyedit.com/' // Optimizely Web Experimentation & Personalization Editor
+            'www.optimizelyedit.com' // Optimizely Web Experimentation & Personalization Editor
           ],
         }
     }
@@ -40,7 +40,7 @@ const nextConfig = {
 
 // Add the Optimizely DXP Image Loader
 /**
- * @type {string|undefined} 
+ * @type {string|undefined}
  */
 const optimizelyDxpUrl = process.env.NEXT_PUBLIC_OPTIMIZELY_CMS_URL
 if (optimizelyDxpUrl) {
@@ -48,4 +48,4 @@ if (optimizelyDxpUrl) {
     nextConfig.images.loaderFile = './src/cloudflareLoader.js'; // Use Cloudflare Images for resizing
 }
 
-module.exports = nextConfig
+export default nextConfig
